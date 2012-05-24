@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>
+      Calculate Data
+    </title>
+  </head>
+  <body>
+    <div>
+      Prestamo:
+    </div>
+    <div>
+      <input type="TEXT" id="txtPrestamo" name="txtPrestamo">
+    </div>
+    ${one}
+  </body>
+</html>

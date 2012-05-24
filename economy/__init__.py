@@ -9,9 +9,11 @@ def main(global_config, **settings):
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     config = Configurator(settings=settings)
+    # mako settings for file extension .html
+    config.add_renderer(".pt", "pyramid.mako_templating.renderer_factory")
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
-    config.add_route('calculate', '/calculate')
+    config.add_route('calculate_init', '/calculate')
     config.scan()
     return config.make_wsgi_app()
 
