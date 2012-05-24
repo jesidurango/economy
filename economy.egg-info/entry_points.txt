@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = economy:main
+      [console_scripts]
+      initialize_economy_db = economy.scripts.initializedb:main
+      
