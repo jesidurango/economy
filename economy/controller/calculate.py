@@ -9,6 +9,14 @@ def calculateInit(request):
         print "Hi i am here"
     except DBAPIError:
         return Response("Error", content_type='text/plain', status_int=500)
-    return {'one':'no se que es esto', 'project':'economy'}
+    return {'empty':'empty'}
 
-
+@view_config(route_name='calculate_values', renderer='calculate/calculate.pt')
+def calculateValues(request):
+    try:
+        produc_value = request.GET.get("txtValorProducto")
+        print produc_value
+        new_value = 0
+    except DBAPIError:
+        return Response("Error", content_type="text/plain", status_int=500)
+    return {'result': new_value}

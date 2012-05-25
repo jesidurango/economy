@@ -1,16 +1,21 @@
-<html>
-  <head>
-    <title>
-      Calculate Data
-    </title>
-  </head>
-  <body>
-    <div>
-      Prestamo:
-    </div>
-    <div>
-      <input type="TEXT" id="txtPrestamo" name="txtPrestamo">
-    </div>
-    ${one}
-  </body>
-</html>
+<%inherit file="/base/index.html" />
+<script language="javaScript">
+  var urlCalculateValues = "${request.route_url('calculate_values')}"
+</script>
+<form id="frmCalculte" name="frmCalculte">
+  <div>
+    Valor producto:
+  </div>
+  <div>
+    <input type="TEXT" id="txtValorProducto" name="txtValorProducto">
+  </div>
+  <div>
+    Valor cuota:
+  </div>
+  <div>
+    <input type="TEXT" id="txtCuota" name="txtCuota">
+  </div>
+  <div>
+    <input type="BUTTON" value="Calcular" onclick="calculate()">
+  </div>
+</form>
