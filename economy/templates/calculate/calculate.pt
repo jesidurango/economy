@@ -16,6 +16,16 @@
     <input type="TEXT" id="txtCuota" name="txtCuota">
   </div>
   <div>
+    Numero de cuotas
+  </div>
+  <div>
+    <input type="TEXT" id="txtNumeroCuotas" name="txtNumeroCuotas">
+  </div>
+  <div id="showResult"></div>
+  <div>
     <input type="BUTTON" value="Calcular" onclick="calculate()">
   </div>
+  <script language="javaScript">
+    validations();
+  </script>
 </form>
