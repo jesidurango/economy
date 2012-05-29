@@ -3,15 +3,15 @@ from pyramid.view import view_config
 
 from sqlalchemy.exc import DBAPIError
 
-from economy.models import (
-    DBSession,
-    MyModel,
-    )
+#from economy.models import (
+#    DBSession,
+    #MyModel,
+#    )
 
 @view_config(route_name='home', renderer='mytemplate.pt')
 def my_view(request):
     try:
-        one = DBSession.query(MyModel).filter(MyModel.name=='one').first()
+        one = 1#DBSession.query(MyModel).filter(MyModel.name=='one').first()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
     return {'one':one, 'project':'economy'}
