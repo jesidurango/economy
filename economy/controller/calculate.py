@@ -18,10 +18,8 @@ def calculateValues(request):
         quota_value = request.POST.get("txtCuota")
         number_quota = request.POST.get("txtNumeroCuotas")
         total_pay = float(number_quota) * float(quota_value)
-        print request.POST.get("txtCuota")
-        print request.POST.get("txtNumeroCuotas")
+        tax = ((float(total_pay) / float(produc_value)))**(1.0/float(number_quota))
         print produc_value
-        new_value = 1234
     except DBAPIError:
         return Response("Error", content_type="text/plain", status_int=500)
-    return {'result': new_value, 'total_pay' : total_pay}
+    return {'total_pay' : total_pay, 'tax' : tax}

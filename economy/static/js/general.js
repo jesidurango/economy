@@ -33,6 +33,6 @@ function calculate () {
 }
 
 function calbackCalculate ( response ) {
-    $("#showResult").html("Usted terminara pagando un total de: " + response.total_pay);
+    $("#showResult").html("Usted terminara pagando un total de: " + response.total_pay + " a una tasa de " + response.tax);
 }
 
