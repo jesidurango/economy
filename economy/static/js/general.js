@@ -36,3 +36,18 @@ function calbackCalculate ( response ) {
     $("#showResult").html("Usted terminara pagando un total de: " + response.total_pay + " a una tasa de " + response.tax);
 }
 
+function saveUser () {
+   $.ajax({
+        type: "POST",
+        url: "user_save",
+        data: { txtUserName: $("#txtUserName").val(),
+            txtPassword: $("#txtPassword").val() }
+    }).done(function( response ) {
+        calbackSaveUser(response);
+    }); 
+}
+
+function calbackSaveUser ( response ) {
+   $("#showResult").html(response.result); 
+}
+

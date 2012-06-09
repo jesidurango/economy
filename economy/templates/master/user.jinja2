@@ -1,0 +1,31 @@
+{% extends "/base/index.jinja2" %}
+{% block title %}Creacion de Usuarios{% endblock %}
+{% block head %}
+  {{ super() }}
+  <script language="javaScript">
+    var urlCalculateValues = "calculate_values"
+  </script>
+{% endblock %}
+{% block content %}
+<form id="frmUser" name="frmUser">
+  <div>
+    Nomber usuario:
+  </div>
+  <div>
+    <input type="TEXT" id="txtUserName" name="txtUserName">
+  </div>
+  <div>
+    Password:
+  </div>
+  <div>
+    <input type="PASSWORD" id="txtPassword" name="txtPassword">
+  </div>
+  <div id="showResult"></div>
+  <div>
+    <input type="BUTTON" value="Guardar" onclick="saveUser()">
+  </div>
+  <script language="javaScript">
+    validations();
+  </script>
+</form>
+{% endblock %}

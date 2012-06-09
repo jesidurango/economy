@@ -15,6 +15,11 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
     
+    #route for user
+    config.add_route('user_init', '/user')
+    config.add_route('user_save', '/user_save')
+
+    #route for calculate
     config.add_route('calculate_init', '/calculate')
     config.add_route('calculate_values', '/calculate_values')
     config.scan()
