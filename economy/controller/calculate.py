@@ -3,7 +3,7 @@ from pyramid.view import view_config
 
 from sqlalchemy.exc import DBAPIError
 
-@view_config(route_name='calculate_init', renderer='calculate/calculate.pt')
+@view_config(route_name='calculate_init', renderer='calculate/calculate.jinja2')
 def calculateInit(request):
     try:
         print "Hi i am here"
@@ -19,7 +19,8 @@ def calculateValues(request):
         number_quota = request.POST.get("txtNumeroCuotas")
         total_pay = float(number_quota) * float(quota_value)
         tax = ((float(total_pay) / float(produc_value)))**(1.0/float(number_quota))
+        result = {'total_pay' : total_pay, 'tax' : tax}
         print produc_value
     except DBAPIError:
         return Response("Error", content_type="text/plain", status_int=500)
-    return {'total_pay' : total_pay, 'tax' : tax}
+    return result

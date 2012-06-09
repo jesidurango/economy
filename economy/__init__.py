@@ -10,6 +10,7 @@ def main(global_config, **settings):
     DBSession.configure(bind=engine)
     config = Configurator(settings=settings)
     # mako settings for file extension .html
+    config.include('pyramid_jinja2')
     config.add_renderer(".pt", "pyramid.mako_templating.renderer_factory")
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')

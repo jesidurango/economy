@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    {% block head %}
+      <script src="static/js/general.js"></script>
+      <script src="static/js/jQuery/jquery.js"></script>
+      <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
